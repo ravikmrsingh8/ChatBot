@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <base target="_parent">
+        <link rel ="stylesheet" href="intercom.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body id="intercom-container-body">
+        <div id="intercom-container">
+            <div data-reactroot="" class="intercom-launcher">
+                <div id="openmessenger"  class="intercom-launcher-open-icon">
+                    
+                </div>
+                <div id='hello' class="intercom-launcher-close-icon"></div>
+            </div>
+        </div>
+        
+        <script>
+            $(document).ready(function(){
+                // jQuery methods go here...
+                
+                /*$.documet.on('click','#openmessenger',function(e){
+                     alert("Toggle");
+                });*/
+                $(document).on("click","#hello",function() {
+                    alert("hello");
+                });
+                
+
+            });
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+	
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-more.js"></script>
+	<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<style>
+		.panel {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .08);
+    max-width: 1440px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.ChatBox {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .08);
+    max-width: 1440px;
+    margin: 0 auto;
+    background: #fff;
+}
+	</style>
+
+	
+</head>
+<body style="fixed">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img style="margin-top:-5px" src="image/jda.png"/></a>
+        </div>
+
+        
+        <!--
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Page 1-1</a></li>
+              <li><a href="#">Page 1-2</a></li>
+              <li><a href="#">Page 1-3</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#">Page 2</a></li>
+        </ul>
+        -->
+        <ul class="nav navbar-nav navbar-right">
+			<li><button id="start_button" onclick="startButton(event)">
+                            <img alt="Start" id="start_img" src="image/mic.gif">
+							</button>
+			</li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+	
+	<div class="charts">		
+			<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">Graphs</div>
+				<div class="panel-body">
+					<div class="col-sm-6">
+						<div id="snowdepth"></div>
+					</div>
+					<div class="col-sm-6">
+						<div id="temparature"></div>
+					</div>
+					
+					<div class="col-sm-6">
+						<div id="bubbleChart"></div>
+					</div>
+					
+					<div class="col-sm-6">
+						<div id="3DScatter"></div>
+					</div>
+					
+					<div class="col-sm-6">
+						<div id="3DDonut"></div>
+					</div>
+				</div>
+			</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	
+    <div class="ChaBox" >
+        <div class="main-section">
+            <div class="row border-chat">
+                <div class="col-md-12 col-sm-12 col-xs-12 first-section">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-6 col-xs-6 left-first-section">
+                            <p class="fa fa-comment-o"> Chat</p>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-6 right-first-section">
+                            <a href="#"><i class="fa fa-window-minimize" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-close fa-3x"  aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row border-chat">
+                <div class="col-md-12 col-sm-12 col-xs-12 second-section">
+                    <div class="chat-section">
+                        <ul>
+							<!--
+                            <li class="self">
+                                <div class="left-chat">
+                                    <img src="image/1499345471_boy.png">
+                                    <p>Lorem ipsum dolor sit ameeserunt.</p>
+								
+                                </div>
+                            </li>
+										
+                            <li>
+                                <div class="left-chat">
+                                    <img src="image/1499345471_boy.png">
+                                    <p>Lorem ipsum dolor sit ameeserunt.</p>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="right-chat">
+                                    <img src="image/bot.png">
+                                    <p>Lorem ipsum dolor sit ameeserunt.</p>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="left-chat">
+                                    <img src="image/1499345471_boy.png">
+                                    <p>Lorem ipsum dolor sit ameeserunt.</p>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="right-chat">
+                                    <img src="image/bot.png">
+                                    <p>Lorem ipsum dolor sit ameeserunt.</p>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="left-chat">
+                                    <img src="image/1499345471_boy.png">
+                                    <p>Lorem ipsum dolor sit ameeserunt.</p>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="right-chat">
+                                    <img src="image/bot.png">
+                                    <p>Lorem ipsum dolor sit ameeserunt.</p>
+
+                                </div>
+                            </li>
+							-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row border-chat">
+                <div class="col-md-12 col-sm-12 col-xs-12 third-section">
+                    <div class="text-bar">
+                        <input type="text"  id="text-input" value="" placeholder="Write Messege">
+							<a id="paper-plane"><i class="fa fa-paper-plane fa-lg send"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/botScript.js"></script>
+        <script src="js/charts.js"></script>
+		<script src = "js/speechToText.js"></script>
+    </div>
+</div>
+</body>
+
+
+
+</html>
+<div class="intercom-conversation-part intercom-conversation-part-admin intercom-conversation-part-last">
+<div class="intercom-comment-container intercom-comment-container-admin">
+	<div class="intercom-comment-container-admin-avatar">
+		<div class="intercom-avatar">
+			<img src="image/operator.png">
+		</div>
+	</div>
+	<div class="intercom-comment">
+		<div class="intercom-blocks">
+			<div class="intercom-block intercom-block-paragraph">
+				<p>Are you an Intercom customer?</p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

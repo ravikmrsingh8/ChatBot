@@ -1,0 +1,252 @@
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel = "stylesheet" href="css/intercom.css"/>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .launcher{ bottom: 20px;
+                   right: 20px;
+                   z-index: 2147482999;
+                   position: fixed;
+                   height: 60px;
+                   border-radius: 100px !important;
+                   overflow: hidden !important;
+                   background: rgb(0, 113, 178) !important;
+                   transition: box-shadow 80ms ease-in-out, width 0.4s ease 0.2s, -webkit-box-shadow 80ms ease-in-out !important;
+                   box-shadow: 5px 10px #888888;
+        }
+    </style>
+    <body>
+        <!-- NavBar -->
+        <div class="header-logo"><img src="image/tagline_jda.png"> </div>
+        <nav class="navbar ">
+            <div class="container-fluid">
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="#"><b></b></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <!--
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Contact</a></li>
+                        -->
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Cleanse History Process
+                    </div>
+
+                    <div class="panel-body">
+                        <!--Cleanse History Copy -->
+                        <form role="form" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2" for="stratDate">Start Date</label>
+                                <div class="col-sm-4"><input type="date" class="form-control" id="startDate" value="01/01/1970"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2" for="duration">Duration(Days)</label>
+                                <div class="col-sm-2"><input type="text" class="form-control" id="duration" placeholder="730"></div>
+                            </div>
+                            <!--
+                            <div class="form-group">
+                                <label class="col-sm-12" for="TextArea">Textarea</label>
+                                <div class="col-sm-6"><textarea class="form-control" id="TextArea"></textarea></div>
+                            </div>
+                            -->
+
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value=""><b>Calculate Lost Sales</b></label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <label class="col-sm-3" for="windowsize">Window Size</label>
+                                    <div class="col-sm-3"><input type="text" class="form-control" id="windowsize" value="4"></div>
+                                </div>
+
+
+                                <div class="col-sm-12">    
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Use History Average</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Use Forecast Performance Metrics</label>
+                                    </div>
+                                    <div class="radio disabled">
+                                        <label><input type="radio" name="optradio" disabled>Use Allocated Forecast Method</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2" for="threshold">Threshold %</label>
+                                <div class="col-sm-4"><input type="text" class="form-control" id="threshold" value="100"></div>
+                            </div>
+
+                            <div class="form-group" >
+                                <div class="col-sm-12">
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value=""><b>Calculate History Adjustments</b></label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-10" style="float:right">
+                                    <HR />
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value=""><b>Use Historical Forecast Impacts</b></label>
+                                    </div>
+                                    <label class="checkbox-inline"><input type="checkbox" value="">Promotions</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="">Market Activities</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="">Overrides</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="">Aggregate Market Activities</label>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <label for="threshold">Lag</label>
+                                            <div ><input type="text" class="form-control" id="threshold" value="0"></div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <label for="threshold">Impact Parameter %</label>
+                                            <div ><input type="text" class="form-control" id="threshold" value="100"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Equate Base History to Base Forecast</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio"  name="optradio">Historical Events</label>
+                                    </div>
+                                    <HR />
+                                </div>
+
+                                <div class="col-sm-10" style="float:right">
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value=""><b>Use Curve Fitting Method</b></label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-10">
+                                            <label class="col-sm-4" for="threshold">Maximum % zero</label>
+                                            <div class="col-sm-2"><input type="text" class="form-control" id="threshold" value="0"></div>
+                                        </div>
+
+                                        <div class="col-sm-10">
+                                            <label class="col-sm-4" for="threshold">Minimum History Duration</label>
+                                            <div class="col-sm-2"><input type="text" class="form-control" id="threshold" value="0"></div>
+                                        </div>
+
+                                        <div class="col-sm-10">
+                                            <label class="col-sm-4" for="threshold">Maximum % History below min </label>
+                                            <div class="col-sm-2"><input type="text" class="form-control" id="threshold" value="0"></div>
+                                        </div>
+
+                                        <div class="col-sm-10">
+                                            <label class="col-sm-4" for="threshold">Window Size </label>
+                                            <div class="col-sm-2"><input type="text" class="form-control" id="threshold" value="0"></div>
+                                        </div>
+
+                                        <div class="col-sm-10">
+                                            <label class="col-sm-4" for="threshold">OutLier Factor </label>
+                                            <div class="col-sm-2"><input type="text" class="form-control" id="threshold" value="0"></div>
+                                        </div>
+
+                                        <div class="checkbox col-sm-8">
+                                            <label><input type="checkbox" value="">Pick Higher profile</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <!--
+                            <div class="form-group">
+                                <div class="col-sm-3"><label>First name</label><input type="text" class="form-control" placeholder="First"></div>
+                                <div class="col-sm-3"><label>Last name</label><input type="text" class="form-control" placeholder="Last"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Phone number</label>
+                                <div class="col-sm-1"><input type="text" class="form-control" placeholder="000"><div class="help">area</div></div>
+                                <div class="col-sm-1"><input type="text" class="form-control" placeholder="000"><div class="help">local</div></div>
+                                <div class="col-sm-2"><input type="text" class="form-control" placeholder="1111"><div class="help">number</div></div>
+                                <div class="col-sm-2"><input type="text" class="form-control" placeholder="123"><div class="help">ext</div></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1">Options</label>
+                                <div class="col-sm-2"><input type="text" class="form-control" placeholder="Option 1"></div>
+                                <div class="col-sm-3"><input type="text" class="form-control" placeholder="Option 2"></div>
+                            </div>
+                            
+                            -->
+                            <div class="form-group">
+                                <div class="col-sm-3">
+                                    <button type="submit" class="btn btn-primary">Run</button>
+                                    <button type="submit" class="btn btn-primary">Clear</button>
+                                </div>
+
+                            </div>
+                        </form>
+                        <!-- done-->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Messnager UI -->
+        <div id="intercom-container"  style="position: fixed; width:60px; height:60px; bottom: 10px; right: 20px; z-index:2147483647;">
+            <div data-reactroot="" class="intercom-app intercom-app-launcher-enabled">
+                <span  id="messengerbox"></span>
+                <div id="intercom-container-body">
+                    <div id="intercom-container">
+                        <div  data-reactroot class="launcher intercom-launcher" >
+
+                            <div class = "intercom-launcher-open-icon"></div>
+                            <div class = "intercom-launcher-close-icon" ></div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#messengerbox").css("display", "none");
+                    $("#intercom-container").click(function () {
+                        $("#messengerbox").html("<div class='intercom-messenger-frame'><iframe allowfullscreen name='intercom-messenger-frame' src='/messenger.html'></iframe></div>");
+                        $("#messengerbox").toggle();
+                    });
+                });
+            </script>
+        </div>
+    </body>
+</html>
