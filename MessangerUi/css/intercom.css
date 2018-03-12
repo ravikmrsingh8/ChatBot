@@ -3418,7 +3418,7 @@ body>.intercom-container{
     opacity:1
 }
 #intercom-container .intercom-composer-gif-button:before{
-    background-image:url(https://js.intercomcdn.com/images/gif-button.7211370d.png);
+    background-image:url(" ");
     background-size:30px 18px;
     background-repeat:no-repeat;
     content:" ";
