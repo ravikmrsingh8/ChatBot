@@ -77,7 +77,7 @@ var processChat = function (){
 	//var height = $(".intercom-conversation-body-parts").height()	
         //$(".intercom-conversation-body-parts").animate({scrollTop: height});
 	$(".intercom-conversation-body-parts").stop().animate({ scrollTop: $(".intercom-conversation-body-parts")[0].scrollHeight}, 1000);	
-	var url = "http://52CQYX1J:8080/api/infer";
+	var url = "http://MD1NPDVSCPO04:8080/api/infer";
 	var successFun = function(result) {
 		console.log(result);
 		var answer = result.text;

@@ -79,6 +79,10 @@ if (!('webkitSpeechRecognition' in window)) {
         $("textarea#message").val(final_transcript);
 		//final_span.innerHTML = linebreak(final_transcript);
         //interim_span.innerHTML = linebreak(interim_transcript);
+		if(final_transcript) {
+			setTimeout(processChat, 1500);
+		}
+			
     };
 }
 
